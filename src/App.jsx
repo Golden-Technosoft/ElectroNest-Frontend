@@ -3,7 +3,7 @@ import { Routes, Route, useLocation, Link, Navigate } from 'react-router-dom'
 import { X } from 'lucide-react'
 import './App.css'
 import Navbar from './components/Common/Navbar'
-import Footer from './components/Common/Footer'
+import Footer from './components/Common/Footer';
 import ProtectedRoute from './components/Common/ProtectedRoute'
 import { useAuth } from './context/AuthContext'
 import { customerAPI } from './services/api'

@@ -1,10 +1,10 @@
 import axios from 'axios';
-import config from '../Config/Config';
+import config, { API_TIMEOUT } from '../Config/Config';
 
 // ── Axios Instance ──
 const api = axios.create({
-  baseURL: config.apiBaseUrl,
-  timeout: 15000,
+  baseURL: config.API_BASE_URL,
+  timeout: config.API_TIMEOUT,
   headers: { 'Content-Type': 'application/json' },
 });
 
@@ -76,7 +76,7 @@ api.interceptors.response.use(
 
       try {
         const { data } = await axios.post(
-          `${config.apiBaseUrl}/auth/refresh/`,   // fixed: was config.API_BASE_URL
+          `${config.API_BASE_URL}/auth/refresh/`,   // fixed: was config.API_BASE_URL
           { refresh: refreshToken }
         );
         const newAccessToken = data.access;
